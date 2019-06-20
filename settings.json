@@ -1,0 +1,42 @@
+{
+    // basic configs
+    // exts: 
+    //
+    // Eslint
+    // Git history
+    // Gitlens
+    // Ruby
+    // Ruby Solargraph -- install: gem install solargraph
+    // TODO highlight
+    // Wakatime
+    // Scheme
+    // Elixir support
+    // Vetur -- vue tool
+    // c#
+    // Rustup
+    
+    "workbench.sideBar.location": "right",
+
+    "editor.fontSize": 12,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "block",
+    "editor.fontWeight": "bold",
+
+    "todohighlight.keywords": [
+        "DEBUG:",
+        "REVIEW:",
+        {
+            "text": "NOTE:",
+            "color": "#ff0000",
+            "backgroundColor": "yellow",
+            "overviewRulerColor": "grey"
+        },
+        {
+            "text": "BUILD",
+            "color": "#ff3b00",
+            "backgroundColor": "#72ffde",
+            "overviewRulerColor": "grey"
+        }
+    ],
+}

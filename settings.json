@@ -17,11 +17,15 @@
     
     "workbench.sideBar.location": "right",
 
+
+
+    "editor.fontFamily": "IBM Plex Mono, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
     "editor.fontWeight": "bold",
+    "editor.wordWrap": "on",
 
     "todohighlight.keywords": [
         "DEBUG:",

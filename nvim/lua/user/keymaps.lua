@@ -4,6 +4,9 @@ local keymap = vim.api.nvim_set_keymap
 -- leader
 vim.g.mapleader = ';'
 
+-- copy and overwrite
+keymap('n', '\\s', [[:%s/<C-R>=expand('<cword>')<CR>//g<Left><Left>]], opts)
+
 -- save with crtl+s
 keymap('n', '<C-s>', ':w<CR>', {noremap = true})
 
@@ -42,5 +45,6 @@ keymap('n', '<leader>1', ':BufferLineGoToBuffer1<CR>', opts)
 keymap('n', '<leader>2', ':BufferLineGoToBuffer2<CR>', opts)
 keymap('n', '<leader>3', ':BufferLineGoToBuffer3<CR>', opts)
 keymap('n', '<leader>4', ':BufferLineGoToBuffer4<CR>', opts)
+keymap('n', '<leader>5', ':BufferLineGoToBuffer5<CR>', opts)
 keymap('n', ']b', ':BufferLineCycleNext<CR>', opts)
 keymap('n', 'b]', ':BufferLineCyclePrev<CR>', opts)

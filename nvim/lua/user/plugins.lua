@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'lewis6991/gitsigns.nvim'
@@ -22,6 +23,8 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
+
+  use 'Exafunction/codeium.vim'
 
   use {
     'L3MON4D3/LuaSnip',

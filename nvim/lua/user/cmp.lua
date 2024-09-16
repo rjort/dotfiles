@@ -54,17 +54,21 @@ cmp.setup({
     }),
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<Right>"] = cmp.mapping.confirm({ select = true }),
-    ["<Tab>"] = cmp.mapping(function()
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif check_backspace() then
+        fallback()
       end
     end, {
       'i',
       's'
     }),
-    ["<S-Tab"] = cmp.mapping(function()
+    ["<S-Tab"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif check_backspace() then
+        fallback()
       end
     end, {
       'i',
@@ -78,6 +82,7 @@ cmp.setup({
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
+        codeium = "[Codeium]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]"
@@ -89,6 +94,7 @@ cmp.setup({
   -- choose our sources
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'codeium' },
     { name = 'buffer' },
     { name = 'luasnip' }
   },

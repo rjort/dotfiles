@@ -10,7 +10,7 @@ end
 
 local servers = {
   'solargraph',
-  'tsserver',
+  'pyright'
 }
 
 -- declare settings to pass to the mason

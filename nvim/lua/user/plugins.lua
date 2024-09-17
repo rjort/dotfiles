@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
 
   use 'Exafunction/codeium.vim'
 
+  use 'psf/black'
+  use 'dense-analysis/ale'
+
   use {
     'L3MON4D3/LuaSnip',
     tag = '2.*',

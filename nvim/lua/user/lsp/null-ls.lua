@@ -15,11 +15,6 @@ null_ls.setup({
 
   sources = {
     formatting.prettier,
-    diagnostics.eslint.with({
-      condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
-      end
-    }), -- eslint.with
 
     conditional(function(utils)
       return utils.root_has_file('Gemfile')
@@ -34,15 +29,19 @@ null_ls.setup({
     end), -- conditional1
 
     conditional(function(utils)
-      return utils.root_has_file('Gemfile')
-      and null_ls.builtins.formatting.rubocop.with({
-        command = 'bundle',
+      return utils.root_has_file({'pyproject.toml', 'setup.py', '.flake8', 'tox.ini', 'setup.cfg'})
+      and null_ls.builtins.formatting.black.with({
+        command = 'black',
         args = vim.list_extend(
-          { 'exec', 'rubocop' },
-          null_ls.builtins.formatting.rubocop._opts.args
-        ), -- args vimlistextend
-      }) --rubocop.with
-      or null_ls.builtins.diagnostics.rubocop
-    end), -- conditional2
+        { '--fast', '-' },
+        null_ls.builtins.formatting.black._opts.args
+        ),
+      })
+      or null_ls.builtins.diagnostics.flake8.with({
+        command = 'flake8',
+        args = { '--max-line-length', '88', '--stdin-display-name', '$FILENAME', '-' }
+      })
+    end),
+
   }, -- sources
 }) --setup

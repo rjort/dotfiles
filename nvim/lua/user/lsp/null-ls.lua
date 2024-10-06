@@ -14,8 +14,6 @@ null_ls.setup({
   debug = false,
 
   sources = {
-    formatting.prettier,
-
     conditional(function(utils)
       return utils.root_has_file('Gemfile')
       and null_ls.builtins.formatting.rubocop.with({

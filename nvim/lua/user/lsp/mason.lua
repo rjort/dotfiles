@@ -9,8 +9,8 @@ if not status_ok_1 then
 end
 
 local servers = {
-  'solargraph',
-  'pyright'
+--  'solargraph',
+--  'pyright'
 }
 
 -- declare settings to pass to the mason
